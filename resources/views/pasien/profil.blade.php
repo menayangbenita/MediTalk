@@ -17,10 +17,11 @@
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <div id="kt_app_content_container" class="app-container container-xxl">
                 <div class="card mb-5 mb-xl-5 box-shadow">
-                    <div class="card-header ">
+                    <div class="card-header d-flex justify-content-between align-items-center">
                         <div class="card-title m-0">
                             <h3 class="fw-bold m-0">Data Pasien</h3>
                         </div>
+                        <a href="{{ route('editprofil') }}" class="btn btn-primary ms-auto">Edit Data</a>
                     </div>
                     <div class="card-body p-9">
                         <div class="row">

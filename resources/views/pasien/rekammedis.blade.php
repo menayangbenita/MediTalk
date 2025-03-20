@@ -25,9 +25,9 @@
                     <div class="card-body p-9">
                         <div class="table-responsive">
                             <table id="tabel_rekam_medis"
-                                class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
+                                class="table align-middle table-row-dashed fs-6 gy-5">
                                 <thead>
-                                    <tr class="fw-bold fs-6 text-gray-800 px-7">
+                                    <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0 e">
                                         <th>Tanggal</th>
                                         <th>Dokter</th>
                                         <th>Anamnesis</th>
@@ -36,11 +36,16 @@
                                         <th>Medikamentosa</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="fw-semibold text-gray-600 text-start text-wrap">
                                     @foreach ($rekammedispasien as $rekam )
                                     <tr>
                                         <td>{{ $rekam->tanggal }}</td>
-                                        <td>{{ $rekam->dokter->nama }}</td>
+                                        <td>
+                                            <div class="text-primary fs-5 fw-bold" data-kt-dokter-filter="{{ $rekam->dokter->nama }}">
+                                                {{ $rekam->dokter->nama }}</div>
+                                            <div class="text-muted fs-7 fw-bold">Spesialis
+                                                {{ $rekam->dokter->spesialis }}</div>
+                                        </td>
                                         <td>{{ $rekam->anamnesis }}</td>
                                         <td>{{ $rekam->tanda_vital }}</td>
                                         <td>{{ $rekam->diagnosis }}</td>

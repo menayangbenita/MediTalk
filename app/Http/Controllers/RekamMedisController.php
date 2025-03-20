@@ -50,13 +50,14 @@ class RekamMedisController extends Controller
         return redirect()->route('rekammedis')->with('success', 'Rekam Medis berhasil ditambahkan.');
     }
 
-    public function destroy(User $rekam)
+    public function destroy($rekam)
     {
-        if (!$rekam) {
+        $record = RekamMedis::find($rekam);
+        if (!$record) {
             return redirect()->route('rekammedis')->with('error', 'Rekam medis tidak ditemukan!');
         }
 
-        $rekam->delete();
+        $record->delete();
 
         return redirect()->route('rekammedis')->with('success', 'Rekam medis berhasil dihapus!');
     }

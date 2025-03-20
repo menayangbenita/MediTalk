@@ -53,8 +53,8 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/akunpasien', [AkunPasienController::class, 'index'])->name('akunpasien');
     Route::post('/akunpasien', [AkunPasienController::class, 'store'])->name('akunpasien');
-    Route::post('/akunpasien/edit', [AkunLaboratController::class, 'update'])->name('akunpasien.edit');
-    Route::delete('/akunpasien/hapus/{pasien}', [AkunLaboratController::class, 'destroy'])->name('akunpasien.hapus');
+    Route::post('/akunpasien/edit', [AkunPasienController::class, 'update'])->name('akunpasien.edit');
+    Route::delete('/akunpasien/hapus/{pasien}', [AkunPasienController::class, 'destroy'])->name('akunpasien.hapus');
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -104,6 +104,7 @@ Route::get('/payment/webhook', [MidtransController::class, 'notification'])->nam
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+    Route::get('/editprofil', [ProfilController::class, 'edit'])->name('editprofil');
 });
 
 Route::middleware('auth:sanctum')->group(function () {

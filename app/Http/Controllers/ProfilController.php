@@ -20,6 +20,18 @@ class ProfilController extends Controller
         };
     }
 
+    public function edit()
+    {
+        $role = Auth::user()->role;
+        $laborats = User::where('role', 'laborat')->get();
+    
+        return match ($role) {
+            'dokter' => view('dokter.editprofil', compact('laborats')),
+            'laborat' => view('laborat.editprofil'),
+            'pasien'      => view('pasien.editprofil')
+        };
+    }
+
     public function dokter($id)
     {
         $role = Auth::user()->role;

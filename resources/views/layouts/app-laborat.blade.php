@@ -15,8 +15,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="shortcut icon" href="../resources/media/logos/Logo.svg" />
-    <script src="../resources/plugins/global/plugins.bundle.js"></script>
-    <link href="../resources/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <script src="plugins/global/plugins.bundle.js"></script>
+    <link href="plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
     @vite(['resources/css/style.bundle.css', 'resources/js/scripts.bundle.js', 'resources/plugins/global/plugins.bundle.js', 'resources/plugins/global/plugins.bundle.css'])
 
     <title>@yield('title', 'MediTalk')</title>
