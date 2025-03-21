@@ -24,7 +24,8 @@
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h3 class="fw-bold m-0">Data Pasien</h3>
                     </div>
-                    <form class="form" action="#" id="form_data_diri_pasien">
+                    <form class="form" action="{{ route('editprofil.edit') }}" id="form_data_diri_pasien" method="POST">
+                        @csrf
                         <div class="card-body p-9">
                             <div class="row">
                                 <label class="col-lg-4 fw-bold text-gray-600">DATA DIRI PASIEN</label>
@@ -38,12 +39,12 @@
                                 <div class="col-lg-4 mt-2">
                                     <label for="tempatLahir" class="form-label">Tempat Lahir</label>
                                     <input type="text" class="form-control form-control-solid" placeholder="cth: Malang"
-                                        id="tempatLahir" />
+                                        id="tempatLahir" name="tempat_lahir" value="{{ Auth::user()->tempat_lahir }}" />
                                 </div>
                                 <div class="col-lg-4 mt-2">
                                     <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
                                     <input type="date" class="form-control form-control-solid" placeholder="Pilih Tanggal"
-                                        id="tanggalLahir"  />
+                                        id="tanggalLahir" name="tanggal_lahir" value="{{ Auth::user()->tanggal_lahir }}"  />
                                 </div>
                             </div>
                             <div class="row mt-lg-5 mt-sm-5">
@@ -55,13 +56,13 @@
                                 <div class="col-lg-4 mt-2">
                                     <label for="nomorTelepon" class="form-label">Nomor Telepon</label>
                                     <input type="number" class="form-control form-control-solid"
-                                        placeholder="cth: 08123456890" id="nomorTelepon" />
+                                        placeholder="cth: 08123456890" id="nomorTelepon" name="nomor_telepon" value="{{ Auth::user()->nomor_telepon }}" />
                                 </div>
                                 <div class="col-lg-4 mt-2">
                                     <label for="namaIbuKandung" class="form-label">Nama Ibu
                                         Kandung</label>
                                     <input type="text" class="form-control form-control-solid"
-                                        placeholder="cth: Indriana" id="namaIbuKandung" />
+                                        placeholder="cth: Indriana" id="namaIbuKandung" name="nama_ibu_kandung" value="{{ Auth::user()->nama_ibu_kandung }}" />
                                 </div>
                             </div>
                             <div class="row mt-lg-5 mt-sm-5">
@@ -69,7 +70,7 @@
                                     <label for="nomorIdentitas" class="form-label">Nomor
                                         Identitas/KTP</label>
                                     <input type="number" class="form-control form-control-solid"
-                                        placeholder="cth: 1234567890123456" id="nomorIdentitas" />
+                                        placeholder="cth: 1234567890123456" id="nomorIdentitas" name="nomor_ktp" value="{{ Auth::user()->nomor_ktp }}"/>
                                 </div>
                             </div>
                             <div class="separator separator-dashed my-6"></div>
@@ -79,22 +80,22 @@
                             <div class="row mt-lg-5 mt-sm-5">
                                 <div class="col-lg-6 mt-2">
                                     <label for="alamat" class="form-label">Alamat</label>
-                                    <textarea class="form-control form-control-solid" data-kt-autosize="true" id="alamat"></textarea>
+                                    <textarea class="form-control form-control-solid" data-kt-autosize="true" id="alamat" name="alamat">{{ Auth::user()->alamat }}</textarea>
                                 </div>
                                 <div class="col-lg-6 mt-2">
                                     <label for="desaKelurahan" class="form-label">Desa/Kelurahan</label>
                                     <input class="form-control form-control-solid" placeholder="cth: Sukoharjo"
-                                        id="tanggalLahir" />
+                                        id="tanggalLahir" name="desa" value="{{ Auth::user()->desa }}"/>
                                 </div>
                                 <div class="col-lg-6 mt-2">
                                     <label for="kecamatan" class="form-label">Kecamatan</label>
                                     <input type="kecamatan" class="form-control form-control-solid" placeholder="cth: Sukun"
-                                        id="kecamatan" />
+                                        id="kecamatan" name="kecamatan" value="{{ Auth::user()->kecamatan }}" />
                                 </div>
                                 <div class="col-lg-6 mt-2">
                                     <label for="kotaKabupaten" class="form-label">Kota/Kabupaten</label>
                                     <input type="kotaKabupaten" class="form-control form-control-solid"
-                                        placeholder="cth: Malang" id="kotaKabupaten" />
+                                        placeholder="cth: Malang" id="kotaKabupaten" name="kota_kabupaten" value="{{ Auth::user()->kota_kabupaten }}" />
                                 </div>
                             </div>
                             <div class="separator separator-dashed my-6"></div>
@@ -104,28 +105,28 @@
                             <div class="row mt-lg-5 mt-sm-5">
                                 <div class="col-lg-6 mt-2">
                                     <label for="selectAgama" class="form-label">Agama</label>
-                                    <select class="form-select form-select-solid" aria-label="Pilih Agama"
+                                    <select class="form-select form-select-solid" aria-label="Pilih Agama" name="agama"
                                         id="selectAgama">
-                                        <option disabled selected>Pilih Agama</option>
-                                        <option value="Islam">Islam</option>
-                                        <option value="Kristen">Kristen</option>
-                                        <option value="Katolik">Katolik</option>
-                                        <option value="Hindu">Hindu</option>
-                                        <option value="Buddha">Buddha</option>
-                                        <option value="Konghuchu">Konghucu</option>
-                                        <option value="Konghuchu">Kepercayaan Terhadap Tuhan Yang Maha
+                                        <option {{ Auth::user()->agama == null ? 'selected' : '' }} disabled>Pilih Agama</option>
+                                        <option {{ Auth::user()->agama == 'Islam' ? 'selected' : '' }} value="Islam">Islam</option>
+                                        <option {{ Auth::user()->agama == 'Kristen' ? 'selected' : '' }} value="Kristen">Kristen</option>
+                                        <option {{ Auth::user()->agama == 'Katolik' ? 'selected' : '' }} value="Katolik">Katolik</option>
+                                        <option {{ Auth::user()->agama == 'Hindu' ? 'selected' : '' }} value="Hindu">Hindu</option>
+                                        <option {{ Auth::user()->agama == 'Buddha' ? 'selected' : '' }} value="Buddha">Buddha</option>
+                                        <option {{ Auth::user()->agama == 'Konghuchu' ? 'selected' : '' }} value="Konghuchu">Konghucu</option>
+                                        {{-- <option value="Konghuchu">Kepercayaan Terhadap Tuhan Yang Maha
                                             Esa
-                                        </option>
+                                        </option> --}}
                                     </select>
                                 </div>
                                 <div class="col-lg-6 mt-2">
                                     <label for="selectStatusPerkawinan" class="form-label">Status
                                         Perkawinan</label>
                                     <select class="form-select form-select-solid" aria-label="Pilih Status Perkawinan"
-                                        id="selectStatusPerkawinan">
-                                        <option disabled selected>Pilih Status Perkawinan</option>
-                                        <option value="Kawin">Kawin</option>
-                                        <option value="Belum Kawin">Belum Kawin</option>
+                                        id="selectStatusPerkawinan" name="status_perkawinan">
+                                        <option {{ Auth::user()->status_perkawinan == null ? 'selected' : '' }} disabled>Pilih Status Perkawinan</option>
+                                        <option {{ Auth::user()->status_perkawinan == 'Kawin' ? 'selected' : '' }} value="Kawin">Kawin</option>
+                                        <option {{ Auth::user()->status_perkawinan == 'Belum Kawin' ? 'selected' : '' }} value="Belum Kawin">Belum Kawin</option>
                                     </select>
                                 </div>
                             </div>
@@ -134,27 +135,24 @@
                                     <label for="selectPendidikan" class="form-label">Pendidikan
                                         Terakhir</label>
                                     <select class="form-select form-select-solid" aria-label="Pilih Pendidikan Terakhir"
-                                        id="selectPendidikan">
-                                        <option disabled selected>Pilih Pendidikan Terakhir</option>
-                                        <option value="Tidak/Belum Sekolah">Tidak/Belum Sekolah</option>
-                                        <option value="Tamat SD/Sederajat">Tamat SD/Sederajat</option>
-                                        <option value="SLTA/Sederajat">SLTA/Sederajat</option>
-                                        <option value="SLTP/Sederajat">SLTP/Sederajat</option>
-                                        <option value="Belum Tamat SD/Sederajat">Belum Tamat
-                                            SD/Sederajat
-                                        </option>
-                                        <option value="Diploma IV/Strata I">Diploma IV/Strata I</option>
-                                        <option value="Diploma I/II">Diploma I/I I</option>
-                                        <option value="Akademi/Diploma III/S. Muda">Akademi/Diploma
-                                            III/S.Muda</option>
-                                        <option value="Strata II">Strata II</option>
-                                        <option value="Strata III">Strata III</option>
+                                        id="selectPendidikan" name="pendidikan_terakhir">
+                                        <option {{ Auth::user()->pendidikan_terakhir == null ? 'selected' : '' }} disabled selected>Pilih Pendidikan Terakhir</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'Tidak/Belum Sekolah' ? 'selected' : '' }} value="Tidak/Belum Sekolah">Tidak/Belum Sekolah</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'Tamat SD/Sederajat' ? 'selected' : '' }} value="Tamat SD/Sederajat">Tamat SD/Sederajat</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'SLTA/Sederajat' ? 'selected' : '' }} value="SLTA/Sederajat">SLTA/Sederajat</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'SLTP/Sederajat' ? 'selected' : '' }} value="SLTP/Sederajat">SLTP/Sederajat</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'Belum Tamat SD/Sederajat' ? 'selected' : '' }} value="Belum Tamat SD/Sederajat">Belum Tamat SD/Sederajat</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'Diploma IV/Strata I' ? 'selected' : '' }} value="Diploma IV/Strata I">Diploma IV/Strata I</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'KaDiploma I/IIwin' ? 'selected' : '' }} value="Diploma I/II">Diploma I/I I</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'Akademi/Diploma III/S. Muda' ? 'selected' : '' }} value="Akademi/Diploma III/S. Muda">Akademi/Diploma III/S.Muda</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'Strata II' ? 'selected' : '' }} value="Strata II">Strata II</option>
+                                        <option {{ Auth::user()->pendidikan_terakhir == 'Strata III' ? 'selected' : '' }} value="Strata III">Strata III</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-6 mt-2">
                                     <label for="pekerjaan" class="form-label">Pekerjaan</label>
                                     <input type="text" class="form-control form-control-solid" placeholder="cth: PNS"
-                                        id="pekerjaan" />
+                                        id="pekerjaan" name="pekerjaan" value="{{ Auth::user()->pekerjaan }}" />
                                 </div>
                             </div>
                         </div>

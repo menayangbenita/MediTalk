@@ -105,6 +105,7 @@ Route::get('/payment/webhook', [MidtransController::class, 'notification'])->nam
 Route::middleware(['auth'])->group(function () {
     Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
     Route::get('/editprofil', [ProfilController::class, 'edit'])->name('editprofil');
+    Route::post('/editprofil/edit', [ProfilController::class, 'update'])->name('editprofil.edit');
 });
 
 Route::middleware('auth:sanctum')->group(function () {
