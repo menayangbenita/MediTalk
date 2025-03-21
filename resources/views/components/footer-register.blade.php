@@ -7,7 +7,7 @@
       </div>
       <!--end::Aside-->
       <!--begin::Body-->
-      <div class="d-none d-lg-flex flex-lg-row-fluid w-50 bgi-size-cover bgi-position-y-center bgi-position-x-start bgi-no-repeat register-page" style="background-image: url('../resources/media/auth/register.jpg')"></div>
+      <div class="d-none d-lg-flex flex-lg-row-fluid w-50 bgi-size-cover bgi-position-y-center bgi-position-x-start bgi-no-repeat register-page" style="background-image: url('{{ asset('media/auth/register.jpg') }}')"></div>
       <!--begin::Body-->
     </div>
     <!--end::Authentication - Sign-up-->
@@ -16,7 +16,7 @@
   <!--begin::Javascript-->
   <script>var hostUrl = "../resources/";</script>
   <!--begin::Global Javascript Bundle(mandatory for all pages)-->
-  <script src="../resources/js/scripts.bundle.js"></script>
+  <script src="{{ asset('js/scripts.bundle.js') }}"></script>
   <!--end::Global Javascript Bundle-->
   <!--begin::Custom Javascript(used for this page only)-->
   {{-- <script src="../resources/js/custom/authentication/sign-up/general.js"></script>
@@ -38,4 +38,3 @@
     <p>Sudah punya akun? <a href="{{ route('login') }}">Login</a></p>
 </body> --}}
 </html>
-    

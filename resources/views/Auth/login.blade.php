@@ -65,5 +65,5 @@
               </div>
               <!--end::Body-->
 
-    <script src="../resources/plugins/global/plugins.bundle.js"></script>
+    <script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
     <x-footerregister></x-footerregister>
