@@ -27,6 +27,19 @@ class User extends Authenticatable
         'maksimal_chat',
         'foto',
         'status_chat',
+        'tempat_lahir',
+        'tanggal_lahir',
+        'nomor_telepon',
+        'nama_ibu_kandung',
+        'alamat',
+        'desa',
+        'kecamatan',
+        'kota_kabupaten',
+        'agama',
+        'status_perkawinan',
+        'pendidikan_terakhir',
+        'nomor_ktp',
+        'pekerjaan',
     ];
 
     protected $hidden = [

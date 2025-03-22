@@ -14,10 +14,12 @@
     <meta property="og:url" content="https://MediTalk.com/">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="../resources/media/logos/Logo.svg" />
-    <link href="../resources/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../media/logos/Logo.svg" />
+    {{-- <link href="../resources/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" /> --}}
+    <link href="../../plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
-    <link href="../resources/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    {{-- <link href="../resources/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" /> --}}
+    <link href="../../plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $.ajaxSetup({
@@ -278,7 +280,7 @@
     <script>
         var hostUrl = "../resources/";
     </script>
-    <script src="../resources/plugins/global/plugins.bundle.js"></script>
+    {{-- <script src="../resources/plugins/global/plugins.bundle.js"></script>
     <script src="../resources/plugins/custom/datatables/datatables.bundle.js"></script>
     <script src="../resources/js/custom/apps/ecommerce/catalog/products.js"></script>
     <script src="../resources/js/scripts.bundle.js"></script>
@@ -287,7 +289,17 @@
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     <script src="../resources/js/custom/apps/chat/chat.js"></script>
-    <script src="../resources\js\custom\widgets.js"></script>
+    <script src="../resources\js\custom\widgets.js"></script> --}}
+    <script src="../../plugins/global/plugins.bundle.js"></script>
+    <script src="../../plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="../../js/custom/apps/ecommerce/catalog/products.js"></script>
+    <script src="../../js/scripts.bundle.js"></script>
+    <script src="../../js/widgets.bundle.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="../../js/custom/apps/chat/chat.js"></script>
+    <script src="../..\js\custom\widgets.js"></script>
 </body>
 
 </html>

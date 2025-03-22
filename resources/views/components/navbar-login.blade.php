@@ -19,7 +19,7 @@
   <link href="{{ asset('css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
 
     <title>MediTalk | Login</title>
-    @vite(['resources/css/style.bundle.css', 'resources/js/scripts.bundle.js', 'resources/plugins/global/plugins.bundle.js', 'resources/plugins/global/plugins.bundle.css'])
+    {{-- @vite(['resources/css/style.bundle.css', 'resources/js/scripts.bundle.js', 'resources/plugins/global/plugins.bundle.js', 'resources/plugins/global/plugins.bundle.css']) --}}
 </head>
 <body id="kt_body" class="app-blank">
   <!--begin::Theme mode setup on page load-->
