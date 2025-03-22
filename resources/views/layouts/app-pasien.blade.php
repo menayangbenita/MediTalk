@@ -278,16 +278,14 @@
     <script>
         var hostUrl = "../resources/";
     </script>
-    <script src="../resources/plugins/global/plugins.bundle.js"></script>
-    <script src="../resources/plugins/custom/datatables/datatables.bundle.js"></script>
-    <script src="../resources/js/custom/apps/ecommerce/catalog/products.js"></script>
-    <script src="../resources/js/scripts.bundle.js"></script>
-    <script src="../resources/js/widgets.bundle.js"></script>
+    <script src="{{ asset('js/custom/apps/ecommerce/catalog/products.js') }}"></script>
+    <script src="{{ asset('js/scripts.bundle.js') }}"></script>
+    <script src="{{ asset('js/widgets.bundle.js') }}"></script>
+    <script src="{{ asset('js/custom/apps/chat/chat.js') }}"></script>
+    <script src="{{ asset('js/custom/widgets.js') }}"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-    <script src="../resources/js/custom/apps/chat/chat.js"></script>
-    <script src="../resources\js\custom\widgets.js"></script>
 </body>
 
 </html>
