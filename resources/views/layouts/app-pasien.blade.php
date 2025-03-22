@@ -14,10 +14,12 @@
     <meta property="og:url" content="https://MediTalk.com/">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="../resources/media/logos/Logo.svg" />
-    <link href="../resources/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="../../media/logos/Logo.svg" />
+    {{-- <link href="../resources/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" /> --}}
+    <link href="../../plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
-    <link href="../resources/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    {{-- <link href="../resources/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" /> --}}
+    <link href="../../plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $.ajaxSetup({
